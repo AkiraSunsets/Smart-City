@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart City | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <i class="bi bi-cpu-fill"></i>
+            <h1>Smart City</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sensores">Sensores</a></li>
+                <li><a href="#projeto-sensor">O Sensor</a></li>
+                <li><a href="#historico">Histórico</a></li>
+                <li><a href="#outros-sensores">Demais Sensores</a></li>
+                <li><a href="#about-us">Sobre nós</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="home-container">
+            <div class="hero-content">
+                <h2>Cidade Conectada</h2>
+                <p>O futuro da automação começa hoje.</p>
+                <button class="btn-start"><a href="#sensores">Acessar Painel</a></button>
+            </div>
+        </section>
+
+        <section id="sensores" class="section-container">
+            <div class="section-header">
+                <h2>Sensores em Tempo Real</h2>
+                <p>Acompanhe as medições atuais dos ambientes da escola.</p>
+            </div>
+
+            <div class="sensores-content">
+                <div class="card-sensor temp-border">
+                    <div class="icon-wrapper temp">
+                        <i class="bi bi-thermometer-half"></i>
+                    </div>
+                    <h3>Temperatura</h3>
+                    <h2 id="valor-temperatura" class="sensor-value temp-text">-- °C</h2> 
+                    <div class="sensor-info">
+                        <p><i class="bi bi-clock-history"></i> <span id="data-temperatura">--</span></p>
+                        <p><i class="bi bi-geo-alt-fill"></i> <span id="local-temperatura">--</span></p>
+                    </div>
+                </div>
+
+                <div class="card-sensor hum-border">
+                    <div class="icon-wrapper hum">
+                        <i class="bi bi-droplet-fill"></i>
+                    </div>
+                    <h3>Umidade</h3>
+                    <h2 id="valor-umidade" class="sensor-value hum-text">-- %</h2>
+                    <div class="sensor-info">
+                        <p><i class="bi bi-clock-history"></i> <span id="data-umidade">--</span></p>
+                        <p><i class="bi bi-geo-alt-fill"></i> <span id="local-umidade">--</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projeto-sensor" class="section-container">
+            <div class="section-header">
+                <h2>O Nosso Sensor IoT</h2>
+                <p>Entenda a montagem física e o funcionamento eletrônico do sistema.</p>
+            </div>
+
+            <div class="projeto-sensor-grid">
+                <div class="projeto-card">
+                    <div class="projeto-card-header">
+                        <i class="bi bi-tools"></i>
+                        <h3>Instrumentos Utilizados</h3>
+                    </div>
+                    <ul class="instrumentos-lista">
+                        <li>
+                            <i class="bi bi-cpu"></i>
+                            <div>
+                                <strong>ESP32:</strong>
+                                <span>Microcontrolador com Wi-Fi nativo responsável por processar o sinal e enviar ao servidor local.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="bi bi-device-ssd"></i>
+                            <div>
+                                <strong>Sensor DHT11 com LED integrado:</strong>
+                                <span>Coleta os dados do ambiente e possui sinalização visual integrada.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="bi bi-grid-3x3"></i>
+                            <div>
+                                <strong>Protoboard:</strong>
+                                <span>Placa de ensaio usada para fixar os pinos dos componentes e criar conexões estáveis.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="bi bi-lightning-charge"></i>
+                            <div>
+                                <strong>Bateria/Pilha:</strong>
+                                <span>Fornece alimentação estável para que o módulo funcione sem depender de tomadas fixas.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="bi bi-toggle-on"></i>
+                            <div>
+                                <strong>Caixa de Armazenamento com Botão ON:</strong>
+                                <span>Invólucro robusto protetor com interruptor integrado para ligar/desligar o sistema.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="bi bi-shuffle"></i>
+                            <div>
+                                <strong>4 Cabos Jumpers & 1 Cabo USB:</strong>
+                                <span>Jumpers para conexões internas de sinal e energia; cabo USB para programação/alimentação inicial.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="projeto-card">
+                    <div class="projeto-card-header">
+                        <i class="bi bi-diagram-3"></i>
+                        <h3>Montagem & Funcionamento</h3>
+                    </div>
+                    <div class="funcionamento-conteudo">
+                        <p class="destaque-funcionamento">
+                            Como o hardware do nosso grupo coleta, trata e transmite as medições do Laboratório até a tela do usuário:
+                        </p>
+                        
+                        <div class="etapa-funcionamento">
+                            <span class="etapa-numero">1</span>
+                            <div>
+                                <h4>Coleta de Sinais Físicos</h4>
+                                <p>O sensor <strong>DHT11</strong> utiliza dois princípios físicos: um <strong>termistor NTC</strong> (que altera sua resistência elétrica com base na temperatura) e um substrato de retenção de umidade que altera a condutividade elétrica conforme a variação de umidade do ar.</p>
+                            </div>
+                        </div>
+
+                        <div class="etapa-funcionamento">
+                            <span class="etapa-numero">2</span>
+                            <div>
+                                <h4>Processamento e Filtros</h4>
+                                <p>O <strong>ESP32</strong> lê os pulsos digitais gerados pelo sensor por meio dos 4 jumpers conectados na protoboard, decodifica a sequência de bits e extrai os valores numéricos exatos de umidade e temperatura.</p>
+                            </div>
+                        </div>
+
+                        <div class="etapa-funcionamento">
+                            <span class="etapa-numero">3</span>
+                            <div>
+                                <h4>Transmissão de Dados por API</h4>
+                                <p>A cada 10 minutos, o ESP32 envia esses dados formatados para o servidor IoT local da escola via protocolo HTTP (método POST) direcionado para os endpoints correspondentes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="historico" class="section-container">
+            <div class="section-header">
+                <h2>Histórico de Medições</h2>
+                <p>Últimos 15 registros coletados pelos sensores.</p>
+            </div>
+            
+            <div class="table-wrapper">
+                <table class="tabela-historico">
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Hora</th>
+                            <th>Temperatura</th>
+                            <th>Umidade</th>
+                        </tr>
+                    </thead>
+                    <tbody id="history-body">
+                        <tr>
+                            <td colspan="4" class="loading-state">Carregando histórico...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="outros-sensores" class="section-container">
+            <div class="section-header">
+                <h2>Demais Sensores da Escola</h2>
+                <p>Navegue e consulte as medições em tempo real de outros ambientes monitorados.</p>
+            </div>
+            
+            <div class="seletor-wrapper">
+                <select id="seletor-sensores">
+                    <option value="">Selecione um ambiente para consultar...</option>
+                    </select>
+            </div>
+
+            <div id="painel-outro-sensor" class="card-sensor outro-sensor-card" style="display: none; margin: 30px auto 0 auto;">
+                <div id="icone-outro-wrapper" class="icon-wrapper">
+                    <i id="icone-outro-sensor" class="bi bi-cpu"></i>
+                </div>
+                <h3 id="nome-outro-sensor">Sensor</h3>
+                <h2 id="valor-outro-sensor" class="sensor-value">--</h2>
+                <div class="sensor-info">
+                    <p><i class="bi bi-clock-history"></i> <span id="data-outro-sensor">--</span></p>
+                    <p><i class="bi bi-geo-alt-fill"></i> <span id="local-outro-sensor">--</span></p>
+                    <p><i class="bi bi-person-badge-fill"></i> <span id="responsavel-outro-sensor">--</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about-us" class="section-container">
+            <div class="section-header">
+                <h2>Sobre a Equipe</h2>
+                <p>Conheça as desenvolvedoras do projeto.</p>
+            </div>
+
+            <div class="sobre-nos-devs-cards">
+                <div class="card-dev">
+                    <div class="img-wrapper">
+                        <img src="./assets/gi.jpg" alt="Foto Giovanna">
+                    </div>
+                    <h3>Giovanna Marques</h3>
+                    <p class="role">Backend Developer</p>
+                    <p class="dev-description">Responsável pelo desenvolvimento da arquitetura lógica, tratamento de requisições assíncronas e garantia de resiliência e cache dos metadados da API.</p>
+                    <span class="badge">3DS-TB</span>
+                    <div class="redes-sociais">
+                        <a href="https://github.com/marques1026" target="_blank"><i class="bi bi-github"></i></a>
+                        <a href="https://www.linkedin.com/in/giovanna-marques-b9bb43357/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="card-dev">
+                    <div class="img-wrapper">
+                        <img src="./assets/kety.jpg" alt="Foto Ketlyn">
+                    </div>
+                    <h3>Ketlyn Araújo</h3>
+                    <p class="role">Frontend - UX/UI Designer</p>
+                    <p class="dev-description">Responsável pela criação da interface responsiva em alto contraste (Dark Mode), estilização dos componentes e garantia de uma navegação fluida e acessível.</p>
+                    <span class="badge">3DS-TB</span>
+                    <div class="redes-sociais">
+                        <a href="https://github.com/AkiraSunsets" target="_blank"><i class="bi bi-github"></i></a>
+                        <a href="https://www.linkedin.com/in/ketlyn-lorrayne-niza-de-araujo/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Projeto Smart City IoT | SENAI Roberto Mange</p>
+    </footer>
+    
+    <script src="api.js"></script>
+</body>
+
+</html>
